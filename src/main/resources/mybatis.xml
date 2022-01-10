@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--约束文件-->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--根标签-->
+<configuration>
+
+    <settings>
+        <!--输出日志到控制台-->
+        <setting name="logImpl" value="LOG4J"/>
+        <!--开启驼峰命名-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <!--别名-->
+    <typeAliases>
+        <package name="com.mgw.crud.bean"/>
+    </typeAliases>
+
+    <plugins>
+        <!--pageHelper分页插件-->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--分页合理不会大于总页数或小于1-->
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
+
+</configuration>
